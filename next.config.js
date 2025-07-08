@@ -1,10 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: "export",              // optional, okay if you're using static export
-  images: {
-    unoptimized: true,          // required for "output: export"
-  },
-  trailingSlash: true,          // optional for SEO
-};
+const isProd = process.env.NODE_ENV === "production";
 
-module.exports = nextConfig;
+const nextConfig = {
+  basePath: isProd ? "/Next.js-Tailwind-CSS-Portfolio-Template" : "",
+  assetPrefix: isProd ? "/Next.js-Tailwind-CSS-Portfolio-Template/" : "",
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
+};
